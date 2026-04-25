@@ -21,6 +21,7 @@ export function Header() {
         <motion.button
           type="button"
           className={styles.btnPrimary}
+          data-testid="start-btn"
           disabled={startDisabled}
           onClick={() => startTournament()}
           whileTap={startDisabled ? undefined : { scale: 0.97 }}

@@ -100,6 +100,13 @@
   border-color: var(--color-danger);
 }
 
+.excludeBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
 .modalBackdrop {
   position: fixed;
   inset: 0;

@@ -18,7 +18,8 @@ export function StandingsSidebar({
   results,
   excludedPlayerIds,
 }: Props) {
-  const { sidebarCollapsed, setSidebarCollapsed, excludePlayer } = useTournament();
+  const { sidebarCollapsed, setSidebarCollapsed, excludePlayer, canExcludePlayer } =
+    useTournament();
   const [pendingExcludePlayerId, setPendingExcludePlayerId] = useState<
     string | null
   >(null);
@@ -64,13 +65,20 @@ export function StandingsSidebar({
                   const name =
                     players.find((p) => p.id === row.playerId)?.name ?? "?";
                   return (
-                    <li key={row.playerId} className={styles.row}>
+                    <li
+                      key={row.playerId}
+                      className={styles.row}
+                      data-testid={`standings-row-${row.playerId}`}
+                      data-player-name={name}
+                    >
                       <span className={styles.rank}>{i + 1}.</span>
                       <span className={styles.pname}>{name}</span>
                       <span className={styles.wins}>{row.wins} győzelem</span>
                       <button
                         type="button"
                         className={styles.excludeBtn}
+                        disabled={!canExcludePlayer(row.playerId)}
+                        data-testid={`exclude-btn-${row.playerId}`}
                         onClick={() => setPendingExcludePlayerId(row.playerId)}
                       >
                         Kizárás
@@ -107,6 +115,7 @@ export function StandingsSidebar({
                 <button
                   type="button"
                   className={styles.cancelBtn}
+                  data-testid="exclude-cancel-btn"
                   onClick={() => setPendingExcludePlayerId(null)}
                 >
                   Mégse
@@ -114,6 +123,7 @@ export function StandingsSidebar({
                 <button
                   type="button"
                   className={styles.confirmBtn}
+                  data-testid="exclude-confirm-btn"
                   onClick={() => {
                     excludePlayer(pendingExcludePlayerId);
                     setPendingExcludePlayerId(null);

@@ -20,6 +20,7 @@ A **Start** gomb a névbekérőn megjelenő játékosok **aktuális listasorrend
    - Aktuális meccs két játékosa; a győztes **koppintással** választható (két „kártya”).  
    - Bármelyik aktuális játékos **kizárható** („kizárás” gomb), ha már nem akar játszani.  
    - Kizárás után az adott játékos összes érintett meccse kikerül a lebonyolításból, és ezek nem számítanak a ranglistába sem.  
+   - Ha már csak **2 aktív játékos** maradt, további kizárás **nem engedélyezett**.  
    - **Következő**: csak győztes megadása után aktív; lépteti a meccsindexet.  
    - **Utolsó meccs**: az elsődleges gomb szövege **Befejezés**; győztes után a **eredmény** nézetre visz (`/eredmeny`).  
    - **Következőként felkészülnek**: a soron következő meccs két játékosa; ha nincs több meccs, üzenet: nincs több meccs.  

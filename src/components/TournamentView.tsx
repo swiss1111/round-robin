@@ -79,6 +79,7 @@ export function TournamentView() {
           <div className={styles.versus}>
             <button
               type="button"
+              data-testid={`winner-btn-${current.playerAId}`}
               className={
                 styles.playerCard +
                 (currentWinner === current.playerAId ? ` ${styles.picked}` : "")
@@ -92,6 +93,7 @@ export function TournamentView() {
             <span className={styles.vs}>VS</span>
             <button
               type="button"
+              data-testid={`winner-btn-${current.playerBId}`}
               className={
                 styles.playerCard +
                 (currentWinner === current.playerBId ? ` ${styles.picked}` : "")
@@ -123,6 +125,7 @@ export function TournamentView() {
           <motion.button
             type="button"
             className={styles.nextBtn}
+            data-testid="next-match-btn"
             disabled={!canAdvance}
             onClick={handlePrimary}
             whileTap={canAdvance ? { scale: 0.98 } : undefined}

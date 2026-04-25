@@ -32,6 +32,7 @@ type TournamentContextValue = {
   startTournament: () => void;
   setWinnerForCurrentMatch: (playerId: string) => void;
   excludePlayer: (playerId: string) => void;
+  canExcludePlayer: (playerId: string) => boolean;
   goToNextMatch: () => void;
   finishTournament: () => void;
   setSidebarCollapsed: (collapsed: boolean) => void;
@@ -107,11 +108,28 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
+  const canExcludePlayer = useCallback(
+    (playerId: string) => {
+      if (state.excludedPlayerIds.includes(playerId)) return false;
+      const activePlayerCount = state.players.filter(
+        (p) => !state.excludedPlayerIds.includes(p.id),
+      ).length;
+      return activePlayerCount > 2;
+    },
+    [state.excludedPlayerIds, state.players],
+  );
+
   const excludePlayer = useCallback(
     (playerId: string) => {
       let shouldFinish = false;
       setState((s) => {
         if (s.excludedPlayerIds.includes(playerId)) {
+          return s;
+        }
+        const activePlayerCountBefore = s.players.filter(
+          (p) => !s.excludedPlayerIds.includes(p.id),
+        ).length;
+        if (activePlayerCountBefore <= 2) {
           return s;
         }
         const nextExcluded = [...s.excludedPlayerIds, playerId];
@@ -191,6 +209,7 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
       startTournament,
       setWinnerForCurrentMatch,
       excludePlayer,
+      canExcludePlayer,
       goToNextMatch,
       finishTournament,
       setSidebarCollapsed,
@@ -210,6 +229,7 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
       startTournament,
       setWinnerForCurrentMatch,
       excludePlayer,
+      canExcludePlayer,
       goToNextMatch,
       finishTournament,
       setSidebarCollapsed,

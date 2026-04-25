@@ -62,6 +62,7 @@ export function Podium() {
             <motion.div
               key={slot}
               className={`${styles.step} ${heightClass}`}
+              data-testid={`podium-slot-${slot + 1}`}
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.08 * idx, duration: 0.4, type: "spring" }}

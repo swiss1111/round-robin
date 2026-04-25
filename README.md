@@ -1,6 +1,6 @@
 # Gabi–Dávid ping-pong bajnokság
 
-Round-robin ping-pong bajnokság kísérleti React alkalmazás: játékosnevek megadása, determinisztikus meccssorsolás, meccsenkénti győztes rögzítés, élő ranglista, dobogós eredményhirdetés. Az állapot **localStorage**-ban van (`gabi-david-rr-v1` kulcs).
+Round-robin ping-pong bajnokság kísérleti React alkalmazás: játékosnevek megadása, determinisztikus meccssorsolás, meccsenkénti győztes rögzítés, élő ranglista, dobogós eredményhirdetés. Az állapot **localStorage**-ban van (`gabi-david-rr-v2` kulcs).
 
 ## Előfeltételek
 
@@ -32,6 +32,12 @@ npm run test:watch
 ```
 
 Vitest figyelő mód.
+
+```bash
+npm run test:e2e
+```
+
+Playwright E2E tesztek (dev server automatikus indítással).
 
 ## Dokumentáció
 

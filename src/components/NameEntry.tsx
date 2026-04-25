@@ -38,6 +38,7 @@ export function NameEntry() {
       </p>
       <div className={styles.formRow}>
         <input
+          data-testid="player-name-input"
           className={styles.input}
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
@@ -50,7 +51,12 @@ export function NameEntry() {
           placeholder="Név"
           aria-label="Új játékos neve"
         />
-        <button type="button" className={styles.addBtn} onClick={submit}>
+        <button
+          type="button"
+          className={styles.addBtn}
+          data-testid="add-player-btn"
+          onClick={submit}
+        >
           Hozzáadás
         </button>
       </div>
@@ -64,6 +70,7 @@ export function NameEntry() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className={styles.listItem}
+              data-testid="player-list-item"
             >
               <span className={styles.order}>{index + 1}.</span>
               <span className={styles.name}>{p.name}</span>

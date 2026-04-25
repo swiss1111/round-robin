@@ -63,4 +63,36 @@ describe("tournamentStorage", () => {
     clearTournamentState(mem);
     expect(mem.getItem(STORAGE_KEY)).toBeNull();
   });
+
+  it("falls back to setup when tournament view has no matches", () => {
+    mem.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        ...defaultPersistedState(),
+        view: "tournament",
+        matches: [],
+      }),
+    );
+    const loaded = loadTournamentState(mem);
+    expect(loaded.view).toBe("setup");
+    expect(loaded.matches).toBeNull();
+  });
+
+  it("clamps currentMatchIndex to existing schedule size", () => {
+    mem.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        ...defaultPersistedState(),
+        view: "tournament",
+        players: [
+          { id: "p1", name: "A" },
+          { id: "p2", name: "B" },
+        ],
+        matches: [{ id: "m1", round: 1, playerAId: "p1", playerBId: "p2" }],
+        currentMatchIndex: 999,
+      }),
+    );
+    const loaded = loadTournamentState(mem);
+    expect(loaded.currentMatchIndex).toBe(0);
+  });
 });

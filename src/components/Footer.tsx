@@ -14,6 +14,7 @@ export function Footer() {
         <button
           type="button"
           className={styles.infoButton}
+          data-testid="footer-info-btn"
           onClick={() => setOpen(true)}
         >
           Hogyan működik a round-robin?
@@ -34,7 +35,9 @@ export function Footer() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 8, scale: 0.98 }}
             >
-              <h3 className={styles.title}>Hogyan állnak össze a meccsek?</h3>
+              <h3 className={styles.title} data-testid="footer-modal-title">
+                Hogyan állnak össze a meccsek?
+              </h3>
               <p className={styles.body}>
                 A round-robin (körmérkőzés) lényege, hogy minden játékos sorban
                 találkozik mindenki mással pontosan egyszer.
@@ -51,6 +54,7 @@ export function Footer() {
               <button
                 type="button"
                 className={styles.closeButton}
+                data-testid="footer-modal-close-btn"
                 onClick={() => setOpen(false)}
               >
                 Bezárás

@@ -31,4 +31,25 @@ describe("buildRoundRobinSchedule", () => {
       expect(row.playerBId).not.toBe(BYE_PLAYER_ID);
     }
   });
+
+  it("schedules 10 players with full pair coverage", () => {
+    const ids = Array.from({ length: 10 }, (_, i) => `p${i + 1}`);
+    const m = buildRoundRobinSchedule(ids);
+    // n * (n - 1) / 2
+    expect(m).toHaveLength(45);
+
+    const pairSet = new Set(
+      m.map((x) => [x.playerAId, x.playerBId].sort().join("-")),
+    );
+    expect(pairSet.size).toBe(45);
+
+    const appearances = new Map<string, number>(ids.map((id) => [id, 0]));
+    for (const row of m) {
+      appearances.set(row.playerAId, (appearances.get(row.playerAId) ?? 0) + 1);
+      appearances.set(row.playerBId, (appearances.get(row.playerBId) ?? 0) + 1);
+    }
+    for (const id of ids) {
+      expect(appearances.get(id)).toBe(9);
+    }
+  });
 });

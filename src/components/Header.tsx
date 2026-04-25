@@ -31,6 +31,7 @@ export function Header() {
         <motion.button
           type="button"
           className={styles.btnGhost}
+          data-testid="reset-btn"
           onClick={() => resetAll()}
           whileTap={{ scale: 0.97 }}
         >

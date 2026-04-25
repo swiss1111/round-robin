@@ -43,4 +43,22 @@ describe("computeStandings", () => {
     expect(s[1]?.playerId).toBe("c");
     expect(s[1]?.wins).toBe(0);
   });
+
+  it("ignores results that belong to excluded-player matches", () => {
+    const extraMatches: ScheduledMatch[] = [
+      ...matches,
+      { id: "m3", round: 2, playerAId: "b", playerBId: "c" },
+    ];
+    const s = computeStandings(
+      players,
+      extraMatches,
+      { m1: "a", m2: "a", m3: "b" },
+      ["a"],
+    );
+    // m1 and m2 are dropped due to excluded player "a"
+    expect(s[0]?.playerId).toBe("b");
+    expect(s[0]?.wins).toBe(1);
+    expect(s[1]?.playerId).toBe("c");
+    expect(s[1]?.wins).toBe(0);
+  });
 });

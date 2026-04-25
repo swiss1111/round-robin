@@ -1,0 +1,10 @@
+services:
+  round-robin-web:
+    image: nginx:alpine
+    container_name: round-robin-web
+    ports:
+      - "8090:80"
+    volumes:
+      - /home/martin/documents/round-robin/html:/usr/share/nginx/html:ro
+      - /home/martin/documents/round-robin/config/default.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped

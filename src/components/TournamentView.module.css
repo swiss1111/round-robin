@@ -1,0 +1,141 @@
+.wrap {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.main {
+  flex: 1;
+  min-width: min(100%, 18rem);
+}
+
+.meta {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.versus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.playerCard {
+  flex: 1;
+  min-width: 8rem;
+  text-align: left;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+.playerCard:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.playerCard:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-1px);
+}
+
+.picked {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-ring);
+}
+
+.label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.pname {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.vs {
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.sub {
+  margin: 0 0 1.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+
+.nextBlock {
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  margin-bottom: 1.25rem;
+}
+
+.nextTitle {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.nextNames {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.nextEmpty {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.nextBtn {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-dim)
+  );
+  color: var(--color-on-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.nextBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.nextBtn:not(:disabled):hover {
+  filter: brightness(1.06);
+}

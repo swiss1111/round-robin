@@ -1,0 +1,76 @@
+.section {
+  text-align: center;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+}
+
+.sub {
+  margin: 0 0 2rem;
+  color: var(--color-text-muted);
+}
+
+.podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 14rem;
+}
+
+.step {
+  flex: 1;
+  max-width: 9rem;
+  padding: 1rem 0.75rem;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: var(--shadow-float);
+}
+
+.first {
+  min-height: 11rem;
+  background: linear-gradient(
+    180deg,
+    var(--color-gold-soft),
+    var(--color-surface)
+  );
+  border-color: var(--color-gold-border);
+  order: 2;
+}
+
+.second {
+  min-height: 8.5rem;
+  order: 1;
+}
+
+.third {
+  min-height: 7rem;
+  order: 3;
+}
+
+.place {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.wins {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}

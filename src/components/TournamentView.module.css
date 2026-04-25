@@ -40,7 +40,9 @@
   color: inherit;
   font: inherit;
   cursor: pointer;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
     transform 0.15s ease;
 }
 .playerCard:disabled {
@@ -83,7 +85,6 @@
   font-size: 0.8rem;
   color: var(--color-text-muted);
 }
-
 
 .nextBlock {
   padding: 1rem;

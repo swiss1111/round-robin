@@ -119,11 +119,17 @@ export function loadTournamentState(
 
     let resolvedView: AppView = view;
     let resolvedMatches = matches;
-    if (resolvedView === "tournament" && (!resolvedMatches || resolvedMatches.length === 0)) {
+    if (
+      resolvedView === "tournament" &&
+      (!resolvedMatches || resolvedMatches.length === 0)
+    ) {
       resolvedView = "setup";
       resolvedMatches = null;
     }
-    if (resolvedView === "results" && (!resolvedMatches || resolvedMatches.length === 0)) {
+    if (
+      resolvedView === "results" &&
+      (!resolvedMatches || resolvedMatches.length === 0)
+    ) {
       resolvedView = "setup";
     }
 

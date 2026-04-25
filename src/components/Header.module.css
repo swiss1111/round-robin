@@ -32,11 +32,18 @@
   border-radius: var(--radius-md);
   cursor: pointer;
   border: 1px solid transparent;
-  transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
 }
 
 .btnPrimary {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dim));
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-dim)
+  );
   color: var(--color-on-accent);
   box-shadow: var(--shadow-glow);
 }

@@ -57,7 +57,11 @@ export function Podium() {
             ? (players.find((p) => p.id === row.playerId)?.name ?? "?")
             : "—";
           const heightClass =
-            slot === 0 ? styles.first : slot === 1 ? styles.second : styles.third;
+            slot === 0
+              ? styles.first
+              : slot === 1
+                ? styles.second
+                : styles.third;
           return (
             <motion.div
               key={slot}
@@ -69,9 +73,7 @@ export function Podium() {
             >
               <span className={styles.place}>{label(slot)}</span>
               <span className={styles.name}>{name}</span>
-              {row && (
-                <span className={styles.wins}>{row.wins} győzelem</span>
-              )}
+              {row && <span className={styles.wins}>{row.wins} győzelem</span>}
             </motion.div>
           );
         })}

@@ -31,12 +31,7 @@ describe("computeStandings", () => {
   });
 
   it("removes excluded players and their matches from standings", () => {
-    const s = computeStandings(
-      players,
-      matches,
-      { m1: "a", m2: "a" },
-      ["a"],
-    );
+    const s = computeStandings(players, matches, { m1: "a", m2: "a" }, ["a"]);
     expect(s).toHaveLength(2);
     expect(s[0]?.playerId).toBe("b");
     expect(s[0]?.wins).toBe(0);

@@ -38,9 +38,6 @@ export function computeStandings(
     });
 }
 
-export function topN(
-  standings: StandingRow[],
-  n: number,
-): StandingRow[] {
+export function topN(standings: StandingRow[], n: number): StandingRow[] {
   return standings.slice(0, n);
 }

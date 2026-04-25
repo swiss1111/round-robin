@@ -18,8 +18,12 @@ export function StandingsSidebar({
   results,
   excludedPlayerIds,
 }: Props) {
-  const { sidebarCollapsed, setSidebarCollapsed, excludePlayer, canExcludePlayer } =
-    useTournament();
+  const {
+    sidebarCollapsed,
+    setSidebarCollapsed,
+    excludePlayer,
+    canExcludePlayer,
+  } = useTournament();
   const [pendingExcludePlayerId, setPendingExcludePlayerId] = useState<
     string | null
   >(null);

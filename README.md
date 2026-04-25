@@ -47,11 +47,11 @@ Playwright E2E tesztek (dev server automatikus indítással).
 
 ## Útvonalak
 
-| Útvonal     | Tartalom            |
-|------------|---------------------|
-| `/`        | Névbekérő (setup)   |
-| `/jatek`   | Mérkőzés nézet      |
-| `/eredmeny`| Dobogó / eredmény   |
+| Útvonal     | Tartalom          |
+| ----------- | ----------------- |
+| `/`         | Névbekérő (setup) |
+| `/jatek`    | Mérkőzés nézet    |
+| `/eredmeny` | Dobogó / eredmény |
 
 ## Tech stack
 

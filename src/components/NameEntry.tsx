@@ -87,7 +87,9 @@ export function NameEntry() {
         </AnimatePresence>
       </ul>
       {players.length < 2 && (
-        <p className={styles.warn}>Legalább két játékos szükséges a starthoz.</p>
+        <p className={styles.warn}>
+          Legalább két játékos szükséges a starthoz.
+        </p>
       )}
     </motion.section>
   );

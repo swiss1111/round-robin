@@ -44,8 +44,8 @@ export function Footer() {
               </p>
               <p className={styles.body}>
                 Így igazságosabb az eredmény, mert nem csak néhány ellenfél
-                alapján dől el a sorrend, hanem mindenki ugyanannyi
-                lehetőséget kap.
+                alapján dől el a sorrend, hanem mindenki ugyanannyi lehetőséget
+                kap.
               </p>
               <p className={styles.body}>
                 A végső ranglista a győzelmek számából áll össze: akinek több

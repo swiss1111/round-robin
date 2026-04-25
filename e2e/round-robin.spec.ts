@@ -81,8 +81,9 @@ test.describe("Round-robin E2E", () => {
 
   test("50 players has correct match count", async ({ page }) => {
     await openFresh(page);
-    const players = Array.from({ length: 50 }, (_, i) =>
-      `J${String(i + 1).padStart(2, "0")}`,
+    const players = Array.from(
+      { length: 50 },
+      (_, i) => `J${String(i + 1).padStart(2, "0")}`,
     );
     await addPlayers(page, players);
     await startTournament(page);
@@ -161,6 +162,8 @@ test.describe("Round-robin E2E", () => {
   }) => {
     await openFresh(page, "/jatek");
     await expect(page).toHaveURL(/\/$/);
-    await expect(page.getByRole("heading", { name: /J.t.kosok/ })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: /J.t.kosok/ }),
+    ).toBeVisible();
   });
 });

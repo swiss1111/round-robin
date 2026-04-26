@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { useNavigate } from "react-router-dom";
+import { newPlayerId } from "../domain/playerId";
 import { buildRoundRobinSchedule } from "../domain/roundRobin";
 import type { AppView, Player } from "../domain/types";
 import {
@@ -62,7 +63,7 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
     if (!trimmed) return;
     setState((s) => ({
       ...s,
-      players: [...s.players, { id: crypto.randomUUID(), name: trimmed }],
+      players: [...s.players, { id: newPlayerId(), name: trimmed }],
     }));
   }, []);
 

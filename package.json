@@ -16,7 +16,9 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:staged": "node scripts/run-staged-tests.mjs",
+    "test:all": "npm run test && npm run test:e2e"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",

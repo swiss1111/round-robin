@@ -18,6 +18,14 @@ export default [
   },
   js.configs.recommended,
   {
+    files: ["scripts/**/*.mjs", "*.config.{js,mjs,cjs}"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+  {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       parser: tsParser,
